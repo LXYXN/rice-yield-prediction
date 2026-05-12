@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Rice Yield Prediction</title>
+  <style>
+    body { font-family: Georgia, serif; margin: 24px; }
+    label { display:block; margin-top:8px; }
+    input { width: 320px; padding:6px; margin-top:4px; }
+    .btn { margin-top:12px; padding:8px 12px; }
+    .result { margin-top:16px; padding:10px; background:#f4f4f4; border-radius:6px; }
+    .error { color: #900; }
+  </style>
+</head>
+<body>
+  <h1>Rice Yield Prediction</h1>
+  <p>Model loaded: <strong>{{ 'Yes' if model_loaded else 'No' }}</strong></p>
+
+  {% if result is not none %}
+    <div class="result">
+      {% if result is string %}
+        <div class="error">Error: {{ result }}</div>
+      {% else %}
+        <div><strong>Predicted yield:</strong> {{ result }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <form method="post" action="/predict" id="predictForm">
+    <label>Area:
+      <input name="Area" id="Area" value="{{ form_values.get('Area','') }}" />
+    </label>
+
+    <label>Year:
+      <input name="Year" id="Year" type="number" value="{{ form_values.get('Year','') }}" />
+    </label>
+
+    <label>average_rain_fall_mm_per_year:
+      <input name="average_rain_fall_mm_per_year" id="average_rain_fall_mm_per_year" type="number" step="any" value="{{ form_values.get('average_rain_fall_mm_per_year','') }}" />
+    </label>
+
+    <label>pesticides_tonnes:
+      <input name="pesticides_tonnes" id="pesticides_tonnes" type="number" step="any" value="{{ form_values.get('pesticides_tonnes','') }}" />
+    </label>
+
+    <label>avg_temp:
+      <input name="avg_temp" id="avg_temp" type="number" step="any" value="{{ form_values.get('avg_temp','') }}" />
+    </label>
+
+    <button class="btn" type="submit">Predict</button>
+  </form>
+
+  <script>
+    // Optional: prevent double submissions
+    const form = document.getElementById('predictForm');
+    form.addEventListener('submit', () => {
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Predicting...';
+    });
+  </script>
+</body>
+</html>
