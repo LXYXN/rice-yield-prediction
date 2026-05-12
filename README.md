@@ -34,12 +34,12 @@ Deployed the project to Render (free tier) since it provides a straightforward z
 <br>
 
 **Google Colab Notebook:**  
-https://colab.research.google.com/drive/1z4Pacfr5SbvZOpXBF2gPcFuCzNL05RjU?usp=sharing
+https://colab.research.google.com/drive/1E4qCW6zSiCGidHPB9r7shKBCgwr-XCYu?usp=sharing
 
 **Saved Images (EDA & Plots):**  
-https://drive.google.com/drive/folders/1XF76db60F2K3DJDYokLjylCKBy9HUpUa?usp=drive_link
+https://drive.google.com/drive/folders/1Z_CE5SUaYKRrrDPyIMOPGC8cIfNJAbrX?usp=sharing
 
 **Presentation (PPT):**  
-https://docs.google.com/presentation/d/1Bd4zmlSXm5n8gnYN5mrROXOaWD4BKxxFyfndV0YxAmc/edit?usp=sharing
+https://docs.google.com/presentation/d/1LXJmE7uLVR7LYhcQo0qsMT7oIYXAftqOJbwTnc4dsis/edit?usp=sharing
 
 </details>
